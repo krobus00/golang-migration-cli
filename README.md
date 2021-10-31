@@ -1,0 +1,1 @@
+# Go mysql migration cli
