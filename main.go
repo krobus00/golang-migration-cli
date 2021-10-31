@@ -21,7 +21,7 @@ func main() {
 		flags = flag.NewFlagSet("goose", flag.ExitOnError)
 
 		dbstring = flags.String("dbstring",
-			fmt.Sprintf("%s:%s@tcp(%s:%s)/%s",
+			fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
 				os.Getenv("DATABASE_USER"),
 				os.Getenv("DATABASE_PASSWORD"),
 				os.Getenv("DATABASE_HOST"),
