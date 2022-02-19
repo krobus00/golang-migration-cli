@@ -22,7 +22,7 @@ func main() {
 
 		dbstring = flags.String("dbstring",
 			fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
-				os.Getenv("DATABASE_USER"),
+				os.Getenv("DATABASE_USERNAME"),
 				os.Getenv("DATABASE_PASSWORD"),
 				os.Getenv("DATABASE_HOST"),
 				os.Getenv("DATABASE_PORT"),
@@ -30,7 +30,7 @@ func main() {
 			),
 			"connection string",
 		)
-		dir = flags.String("dir", "./migrations", "directory with migration files")
+		dir = flags.String("dir", fmt.Sprintf("./%s", os.Getenv("MIGRATION_PATH")), "directory with migration files")
 	)
 
 	flags.Parse(os.Args[1:])
