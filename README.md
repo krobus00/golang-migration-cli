@@ -1,4 +1,4 @@
-# Go mysql migration cli
+# Go sql migration cli
 
 # command
 1. migration create <file_name>
